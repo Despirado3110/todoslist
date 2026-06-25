@@ -21,6 +21,9 @@ async function getTodos() {
       const li = document.createElement("li");
       li.className = "todo-item";
       li.textContent = todo.title;
+      if (todo.completed) {
+        li.style.textDecoration= "line-through"
+      }
       listEl.appendChild(li);
     });
     statusElemets.textContent = "todos has been loaded successfully";
@@ -38,6 +41,4 @@ getTodos();
 // 7. HELPER: prevent XSS (just good practice)
 // --------------------------------------------------------------
 
-// --------------------------------------------------------------
-// 8. CALL THE FUNCTION
-// --------------------------------------------------------------
+// ----------------------// --------------------------------------------------------------
